@@ -13,6 +13,8 @@ db.sqlite3
 /media
 venv
 /static
+js
+css
 
 ### NPM ###
 /node_modules

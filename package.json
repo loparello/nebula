@@ -1,0 +1,17 @@
+{
+  "name": "nebula",
+  "version": "0.1.0",
+  "description": "A Django app for fast websites and blogs creation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "author": "Lorenzo Parenti",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2"
+  }
+}
