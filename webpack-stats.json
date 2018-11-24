@@ -1,1 +1,1 @@
-{"status":"done","chunks":{"main":[{"name":"main.css","path":"C:\\laragon\\www\\nebula\\build\\bundles\\main.css"},{"name":"main.js","path":"C:\\laragon\\www\\nebula\\build\\bundles\\main.js"}]}}
+{"status":"done","chunks":{"main":[{"name":"main.bundle.css","path":"C:\\laragon\\www\\nebula\\dist\\bundles\\main.bundle.css"},{"name":"main.bundle.js","path":"C:\\laragon\\www\\nebula\\dist\\bundles\\main.bundle.js"}]}}

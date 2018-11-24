@@ -1,13 +1,14 @@
 const path = require('path')
 var BundleTracker = require('webpack-bundle-tracker')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   context: __dirname,
   entry: './src/js/index.js',
   output: {
-    filename: '[name].js',
-    path: path.resolve('./build/bundles')
+    filename: '[name].bundle.js',
+    path: path.resolve('./dist/bundles')
   },
 
   module: {
@@ -16,26 +17,38 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       },
       {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader"
+          'css-loader',
+          'sass-loader'
         ]
       }
     ]
   },
 
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    },
+    extensions: ['*', '.js', '.vue', '.json']
+  },
+
   plugins: [
     new BundleTracker({filename: './webpack-stats.json'}),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
-  ],
+      filename: '[name].bundle.css',
+      chunkFilename: '[id].bundle.css'
+    }),
+    new VueLoaderPlugin()
+  ]
 
 }

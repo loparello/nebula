@@ -123,10 +123,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'nebula/static'),
-    os.path.join(BASE_DIR, 'build'),
+    os.path.join(BASE_DIR, 'dist'),
 ]
 
-if DEBUG == True:
+if DEBUG:
     WEBPACK_LOADER = {
         'DEFAULT': {
             'BUNDLE_DIR_NAME': 'bundles/',
@@ -136,7 +136,7 @@ if DEBUG == True:
 else:
     WEBPACK_LOADER = {
         'DEFAULT': {
-            'BUNDLE_DIR_NAME': 'dist/',
+            'BUNDLE_DIR_NAME': 'build/',
             'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-prod.json'),
         }
     }
