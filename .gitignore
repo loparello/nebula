@@ -13,8 +13,9 @@ db.sqlite3
 /media
 venv
 /static
-js
-css
 
-### NPM ###
+### NPM and Webpack ###
 /node_modules
+/public
+bundles
+

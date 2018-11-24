@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages.apps.PagesConfig',
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
@@ -121,5 +122,21 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'nebula/static')
+    os.path.join(BASE_DIR, 'nebula/static'),
+    os.path.join(BASE_DIR, 'assets'),
 ]
+
+if DEBUG == True:
+    WEBPACK_LOADER = {
+        'DEFAULT': {
+            'BUNDLE_DIR_NAME': 'bundles/',
+            'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+        }
+    }
+else:
+    WEBPACK_LOADER = {
+        'DEFAULT': {
+            'BUNDLE_DIR_NAME': 'dist/',
+            'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-prod.json'),
+        }
+    }

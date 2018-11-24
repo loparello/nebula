@@ -6,12 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "venv": "venv/Scripts/activate",
+    "runserver": "python manage.py runserver"
   },
   "author": "Lorenzo Parenti",
   "license": "MIT",
   "devDependencies": {
     "webpack": "^4.26.0",
+    "webpack-bundle-tracker": "^0.4.2-beta",
     "webpack-cli": "^3.1.2"
   }
 }

@@ -1,4 +1,4 @@
-{% load static %}
+{% load render_bundle from webpack_loader %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,6 @@
     
     {% endblock %}
 
-    <script src="{% static 'js/app.js' %}"></script>
+    {% render_bundle 'main' 'js' 'DEFAULT' %}
 </body>
 </html>
