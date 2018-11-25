@@ -1,6 +1,7 @@
 .intro {
     background: url('../img/nebula.jpg') no-repeat;
     background-size: cover;
+    font-size: $font-size-sm;
     min-height: $content-min-height;
     position: relative;
 }
@@ -8,7 +9,7 @@
 .intro-layer {
     background-color: $black;
     height: 100%;
-    opacity: 0.35;
+    opacity: 0.45;
     position: absolute;
     width: 100%
 }

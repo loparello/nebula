@@ -1,11 +1,9 @@
 <template>
     <div class="intro-jumbotron jumbotron text-center">
         <h1 class="display-4">Welcome to Nebula</h1>
-        <p class="lead">A simple Django Framework strater toolkit for apps, websites and blogs development, empowered with Vue.js on the front-end</p>
-        <hr class="my-4 bg-light">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p class="lead">A simple Django Framework strater kit for rapid apps and websites development, empowered with Vue.js for interactive front-ends</p>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            <a class="btn btn-primary btn-lg mt-2" href="#" role="button">Get started</a>
         </p>
     </div>
 </template>
