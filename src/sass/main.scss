@@ -1,4 +1,9 @@
+// Variables
 @import './variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
 
 body {
     background-color: $primary;
