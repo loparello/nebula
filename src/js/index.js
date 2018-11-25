@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-import TestComponent from './components/TestComponent';
+import Jumbotron from './components/Jumbotron';
 
 import '../sass/main.scss';
 
@@ -15,5 +15,5 @@ try {
 
 const app = new Vue({
     el: '#app',
-    components: { TestComponent }
+    components: { Jumbotron }
 });

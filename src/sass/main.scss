@@ -1,14 +1,8 @@
 // Variables
-@import './variables';
+@import './demo/variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-
-body {
-    background-color: $primary;
-}
-
-p {
-    font-size: 16px;
-}
+// Theme
+@import './demo/theme';

@@ -10,9 +10,18 @@
     {% render_bundle 'main' 'css' 'DEFAULT' %}
 </head>
 <body>
-    {% block content %} 
+    <!-- Navbar -->
+    {% include 'demo/partials/_navbar.html' %}
     
-    {% endblock %}
+    <!-- Content -->
+    <div class="content">
+        {% block content %} 
+        
+        {% endblock %}
+    </div>
+    
+    <!-- Footer -->
+    {% include 'demo/partials/_footer.html' %}
 
     {% render_bundle 'main' 'js' 'DEFAULT' %}
 </body>
