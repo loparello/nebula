@@ -10,8 +10,7 @@ const outputPath = (env === 'production') ? path.resolve('./dist/build') : path.
 module.exports = {
   context: __dirname,
   entry: {
-    main: './src/js/index.js',
-    bootstrap: './src/js/bootstrap.js',
+    main: './src/js/index.js'
   },
   output: {
     filename: '[name].[hash].bundle.js',
