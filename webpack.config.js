@@ -12,7 +12,8 @@ module.exports = (env, argv) => {
   return {
     context: __dirname,
     entry: {
-      main: './src/js/index.js'
+      main: './src/js/index.js',
+      app: './src/js/app.js'
     },
     output: {
       filename: isProduction ? '[name].[chunkhash].bundle.js' : '[name].bundle.js',

@@ -1,4 +1,5 @@
 {% extends 'demo/base.html' %}
+{% load render_bundle from webpack_loader %}
 {% load static %}
 
 {% block content %}
@@ -9,5 +10,8 @@
             <intro-jumbotron></intro-jumbotron>
         </div>
     </div>
+
+    {% render_bundle 'vendors~app' 'js' 'DEFAULT' %}
+    {% render_bundle 'app' 'js' 'DEFAULT' %}
 
 {% endblock %}

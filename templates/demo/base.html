@@ -6,8 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Nebula Site Builder</title>
+
+    <!-- Styles -->
     {% render_bundle 'main' 'css' 'DEFAULT' %}
+
+    <!-- Scripts -->
+    {% render_bundle 'vendors~main' 'js' 'DEFAULT' %}
+    {% render_bundle 'main' 'js' 'DEFAULT' %}
+
 </head>
 <body>
     <!-- Navbar -->
@@ -22,8 +30,5 @@
     
     <!-- Footer -->
     {% include 'demo/partials/_footer.html' %}
-
-    {% render_bundle 'vendors~main' 'js' %}
-    {% render_bundle 'main' 'js' 'DEFAULT' %}
 </body>
 </html>

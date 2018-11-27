@@ -1,9 +1,9 @@
-import Vue from 'vue';
-
-import IntroJumbotron from './components/IntroJumbotron';
-
+// Loads styles entry point.
 import '../sass/main.scss';
 
+/* Loads jQuery and the Bootstrap jQuery plugin which provides support
+ * for JavaScript based Bootstrap features such as modals and tabs.
+ */
 try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
@@ -12,11 +12,4 @@ try {
 } catch (error) {
     console.error(error);
 }
-
-new Vue({
-    el: '#app',
-    components: { 
-        'intro-jumbotron': IntroJumbotron 
-    }
-});
 
