@@ -12,7 +12,7 @@
 <script>
     export default {
         mounted() {
-            console.log('Jumbotron component mounted with Vue.js')
+            console.log('Intro Jumbotron component mounted with Vue.js')
         }
     }
 </script>

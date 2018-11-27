@@ -117,19 +117,15 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'dist'),
 ]
 
+def set_bundle_dir():
+    if DEBUG:
+        return 'dev/'
+    else:
+        return 'build/'
 
-
-if DEBUG:
-    WEBPACK_LOADER = {
-        'DEFAULT': {
-            'BUNDLE_DIR_NAME': 'bundles/',
-            'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
-        }
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': set_bundle_dir(),
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
     }
-else:
-    WEBPACK_LOADER = {
-        'DEFAULT': {
-            'BUNDLE_DIR_NAME': 'build/',
-            'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-prod.json'),
-        }
-    }
+}

@@ -1,14 +1,26 @@
 const path = require('path')
-var BundleTracker = require('webpack-bundle-tracker')
+const BundleTracker = require('webpack-bundle-tracker')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { VueLoaderPlugin } = require('vue-loader');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+const env = process.env.NODE_ENV;
+const outputPath = (env === 'production') ? path.resolve('./dist/build') : path.resolve('./dist/dev');
 
 module.exports = {
   context: __dirname,
-  entry: './src/js/index.js',
+  entry: {
+    main: './src/js/index.js',
+    bootstrap: './src/js/bootstrap.js',
+  },
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve('./dist/bundles')
+    filename: '[name].[hash].bundle.js',
+    path: outputPath
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all"
+    }
   },
 
   module: {
@@ -58,6 +70,7 @@ module.exports = {
   },
 
   plugins: [
+    new CleanWebpackPlugin([outputPath]),
     new BundleTracker({filename: './webpack-stats.json'}),
     new MiniCssExtractPlugin({
       filename: '[name].bundle.css',
