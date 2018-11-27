@@ -5,6 +5,7 @@ const { VueLoaderPlugin } = require('vue-loader');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const env = process.env.NODE_ENV;
+const outputFilename = (env === 'production') ? '[name].[chunkhash].bundle.js' : '[name].bundle.js'
 const outputPath = (env === 'production') ? path.resolve('./dist/build') : path.resolve('./dist/dev');
 
 module.exports = {
@@ -13,15 +14,16 @@ module.exports = {
     main: './src/js/index.js'
   },
   output: {
-    filename: '[name].[hash].bundle.js',
+    filename: outputFilename,
     path: outputPath
   },
   optimization: {
     splitChunks: {
-      chunks: "all"
+      chunks: 'all'
     }
   },
 
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -54,8 +56,16 @@ module.exports = {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
+          {
+            loader: 'css-loader', options: {
+                sourceMap: true
+            }
+          },
+          {
+            loader: 'sass-loader', options: {
+                sourceMap: true
+            }
+          }
         ]
       }
     ]
