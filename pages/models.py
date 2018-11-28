@@ -13,4 +13,7 @@ class Page(models.Model):
     image_cover = models.ImageField(upload_to='images/%Y/%m/%d/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.title
+
 
