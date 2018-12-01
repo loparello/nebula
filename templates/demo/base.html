@@ -13,7 +13,6 @@
     {% render_bundle 'main' 'css' 'DEFAULT' %}
 
     <!-- Scripts -->
-    {% render_bundle 'vendors~main' 'js' 'DEFAULT' %}
     {% render_bundle 'main' 'js' 'DEFAULT' %}
 
 </head>
@@ -30,5 +29,9 @@
     
     <!-- Footer -->
     {% include 'demo/partials/_footer.html' %}
+
+    <!-- Scripts -->
+    {% render_bundle 'vendors~app' 'js' 'DEFAULT' %}
+    {% render_bundle 'app' 'js' 'DEFAULT' %}
 </body>
 </html>

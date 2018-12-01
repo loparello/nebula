@@ -1,8 +1,11 @@
 // Variables
-@import './demo/variables';
+@import './demo-bulma/variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap';
+
+// Bulma
+@import "~bulma/bulma";
 
 // Theme
-@import './demo/theme';
+@import './demo-bulma/theme';

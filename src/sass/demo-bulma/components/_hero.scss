@@ -1,0 +1,13 @@
+.hero-main {
+    background: url('../img/nebula.jpg') center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-main-layer {
+    background-color: $black;
+    height: 100%;
+    opacity: 0.45;
+    position: absolute;
+    width: 100%
+}
