@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import PageMetadata
+from .models import Page
+
+admin.site.register(PageMetadata)
+admin.site.register(Page)

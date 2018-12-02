@@ -21,5 +21,6 @@ class Page(models.Model):
     is_published = models.BooleanField('Published', default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
     def __str__(self):
         return self.title
