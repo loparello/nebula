@@ -1,12 +1,12 @@
 <template>
     <div class="hero-body has-text-centered">
         <div class="container">
-            <h1 class="title">
+            <h1 class="title is-spaced">
                 Start Django apps
             </h1>
-            <h2 class="subtitle">
+            <p class="subtitle">
                 Nebula is an open source starter kit for rapid apps and websites development
-            </h2>
+            </p>
         </div>
     </div>
 </template>
