@@ -7,7 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Nebula Site Builder</title>
+    {% if metadata %}
+        <title>{{ metadata.title }}</title>
+    {% else %}
+        <title>Nebula</title>
+    {% endif %}
+
+    <meta name="description" content="{{metadata.description}}"/>
+    <meta name="keywords" content="{{metadata.keywords}}"/>
+
+    <meta property="og:title" content="{{metadata.title}}"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:site_name" content="Nebula sites builder"/>
+    <meta property="og:description" content="{{metadata.description}}"/>
 
     <!-- Styles -->
     {% render_bundle 'main' 'css' 'DEFAULT' %}

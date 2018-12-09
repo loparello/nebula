@@ -1,8 +1,21 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from pages.models import Page
 
 def index(request):
-    return render(request, 'demo/pages/index.html')
+    """View function for home page of site."""
+    page = Page.objects.filter(is_published=True).get(is_homepage=True)
+    context = {
+        'page': page,
+        'metadata': page.metadata
+    }
+    print(page)
+    return render(request, 'demo/pages/index.html', context=context)
 
 def about(request):
-    return render(request, 'demo/pages/about.html')
+    page = Page.objects.filter(is_published=True).get(slug='about')
+    context = {
+        'page': page,
+        'metadata': page.metadata
+    }
+    return render(request, 'demo/pages/about.html', context=context)
