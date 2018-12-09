@@ -6,6 +6,7 @@ class PageMetadata(Metadata):
         verbose_name = 'page metadata'
         verbose_name_plural = 'page metadata'
 
+
 class Page(models.Model):
     metadata = models.OneToOneField(
         PageMetadata, 
@@ -14,13 +15,22 @@ class Page(models.Model):
         null=True,
         help_text='Add metadata for page SEO'
     )
-    title = models.CharField(max_length=200)
-    slug = models.SlugField()
-    body = models.TextField(blank=True, help_text='Enter the main content of the page')
-    image_cover = models.ImageField('Cover', upload_to='images/%Y/%m/%d/')
-    is_published = models.BooleanField('Published', default=False)
+    title = models.CharField(
+        max_length=200,
+        help_text='Set title to display in page and in navigation'
+    )
+    slug = models.SlugField(help_text='Set page url and database reference (auto-generated from title)')
+    is_published = models.BooleanField(
+        'Published', 
+        default=False
+    )
+    is_homepage = models.BooleanField(
+        'Home page', 
+        default=False,
+        help_text='Set page as home page without ambiguity'
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    
+
     def __str__(self):
         return self.title
