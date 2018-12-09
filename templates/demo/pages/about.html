@@ -1,0 +1,14 @@
+{% extends 'demo/base.html' %}
+{% load render_bundle from webpack_loader %}
+{% load static %}
+
+{% block content %}
+
+    <div id="app">
+        <section class="hero-main hero is-info is-fullheight-with-navbar">
+            <div class="hero-main-layer"></div>
+            <hero-body></hero-body>
+        </section>
+    </div>
+
+{% endblock %}
