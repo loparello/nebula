@@ -10,7 +10,7 @@ def index(request):
         'metadata': page.metadata
     }
     print(page)
-    return render(request, 'demo/pages/index.html', context=context)
+    return render(request, 'pages/index.html', context=context)
 
 def about(request):
     page = Page.objects.filter(is_published=True).get(slug='about')
@@ -18,4 +18,4 @@ def about(request):
         'page': page,
         'metadata': page.metadata
     }
-    return render(request, 'demo/pages/about.html', context=context)
+    return render(request, 'pages/about.html', context=context)
