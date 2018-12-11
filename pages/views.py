@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from pages.models import Page
+
+from .models import Page
 
 def index(request):
     """View function for home page of site."""

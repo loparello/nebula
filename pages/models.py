@@ -21,11 +21,11 @@ class Page(models.Model):
     )
     slug = models.SlugField(help_text='Set page url and database reference (auto-generated from title)')
     is_published = models.BooleanField(
-        'Published', 
+        'Is Published',
         default=False
     )
     is_homepage = models.BooleanField(
-        'Home page', 
+        'Is Homepage',
         default=False,
         help_text='Set page as home page without ambiguity'
     )
