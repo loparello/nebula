@@ -19,29 +19,33 @@ class PartialsGroup(models.Model):
 
 class Partial(models.Model):
     name = models.CharField(
-      max_length=200,
-      help_text='Set the reference partial name'
+        max_length=200,
+        help_text='Set the reference partial name'
     )
     title = models.CharField(
-      max_length=200,
-      blank=True,
-      help_text='The title to display in the partial'
+        max_length=200,
+        blank=True,
+        help_text='The title to display in the partial'
     )
     subtitle = models.CharField(
-      max_length=200,
-      blank=True,
-      help_text='The subtitle to display in the partial'
+        max_length=200,
+        blank=True,
+        help_text='The subtitle to display in the partial'
     )
     text = models.TextField(
-      blank=True,
-      help_text='The text body to display in the partial'
+        blank=True,
+        help_text='The text body to display in the partial'
     )
     group = models.ForeignKey(
-      PartialsGroup,
-      on_delete=models.SET_NULL,
-      blank=True,
-      null=True,
-      help_text='Arrange partials into groups'
+        PartialsGroup,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        help_text='Arrange partials into groups'
+    )
+    image = models.ImageField(
+        upload_to='images/%Y/%m/%d/', 
+        blank=True
     )
 
     def __str__(self):

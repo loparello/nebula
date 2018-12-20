@@ -118,6 +118,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'dist'),
 ]
 
+# Media folder settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 def set_bundle_dir():
     if DEBUG:
         return 'dev/'
