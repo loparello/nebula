@@ -4,11 +4,24 @@
 
 {% block content %}
 
-    <div id="app">
-        <section class="hero-main hero is-info is-fullheight-with-navbar">
-            <div class="hero-main-layer"></div>
-            <hero-body></hero-body>
-        </section>
-    </div>
+    <section class="hero-main hero is-info">
+        <div class="hero-main-layer"></div>
+        <div class="hero-body">
+          <div class="container">
+              <h1 class="title is-spaced">
+                  {{ hero.title }}
+              </h1>
+              <p class="subtitle">
+                  {{ hero.subtitle }}
+              </p>
+          </div>
+      </div>
+    </section>
+    <section class="section is-medium">
+      <div class="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat ipsum felis, at molestie magna gravida vitae. Vivamus vel mauris convallis, accumsan tortor eu, mollis urna. Fusce a aliquam ex. Curabitur at massa eget ipsum gravida porta. Sed arcu eros, lobortis vitae enim sed, sagittis cursus lorem.</p>
+        <p>Sed pellentesque odio ut consectetur vehicula. Nunc ut mattis lectus. Mauris et convallis metus. Proin hendrerit condimentum varius. Aenean nec nisl justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc vitae congue arcu. Donec nisi dui, fringilla eu diam mattis, efficitur cursus tortor. Sed ligula libero, tincidunt dictum placerat in, blandit ac ligula.</p>
+      </div>
+    </section>
 
 {% endblock %}

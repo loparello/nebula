@@ -11,4 +11,8 @@
         </section>
     </div>
 
+    <!-- Scripts -->
+    {% render_bundle 'vendors~app' 'js' 'DEFAULT' %}
+    {% render_bundle 'app' 'js' 'DEFAULT' %}
+
 {% endblock %}

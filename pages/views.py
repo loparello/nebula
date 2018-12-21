@@ -15,8 +15,10 @@ def index(request):
 
 def about(request):
     page = Page.objects.filter(is_published=True).get(slug='about')
+    hero = page.partial_set.get(id=2)
     context = {
         'page': page,
-        'metadata': page.metadata
+        'metadata': page.metadata,
+        'hero': hero
     }
     return render(request, 'pages/about.html', context=context)
